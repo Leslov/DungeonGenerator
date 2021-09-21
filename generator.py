@@ -6,10 +6,10 @@ def generate_boundaries(lvl: LevelInfo, gen_settings: GenerationSettings) -> lis
     size_mod = gen_settings.level_scale
     size = gen_settings.chunk_size * size_mod
     boundaries = [
-        (0, 0),
-        (size, 0),
-        (size, size),
-        (size, size),
+        (size*0.1, size*0.1),
+        (size*0.9, size*0.2),
+        (size*0.9, size*0.8),
+        (size*0.4, size*0.9),
     ]  # Координаты должны иметь только положительные значения
     lvl.boundaries = boundaries
 

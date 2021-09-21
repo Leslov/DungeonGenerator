@@ -2,6 +2,7 @@ import generator
 from GenerationSettings import GenerationSettings
 from LevelGraphics import LevelGraphics
 from LevelInfo import LevelInfo
+from tkinter import *
 
 
 def get_default_settings():
@@ -28,6 +29,17 @@ def generate_level_info(gen_settings, pref_gen_set: GenerationSettings = None):
     return lvl
 
 
+root = Tk()
+root['bg'] = '#fafafa'
+root.title('Название проги')
+# root.wm_attributes('-alpha', 0.7) #Прозрачность
+root.geometry('1600x900')
+w = 1024
+h = 768
+canvas = Canvas(root, width=w, height=h)
+canvas.pack()
+
 level_info = generate_level_info(get_default_settings())
 level = LevelGraphics(level_info)
-level.print_graphics()
+level.draw_graphics(canvas, (w, h))
+root.mainloop()
