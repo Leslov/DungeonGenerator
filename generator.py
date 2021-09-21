@@ -1,3 +1,4 @@
+from polygon_generator import to_convex_contour
 from GenerationSettings import GenerationSettings
 from LevelInfo import LevelInfo
 
@@ -5,12 +6,8 @@ from LevelInfo import LevelInfo
 def generate_boundaries(lvl: LevelInfo, gen_settings: GenerationSettings) -> list[tuple]:
     size_mod = gen_settings.level_scale
     size = gen_settings.chunk_size * size_mod
-    boundaries = [
-        (size*0.1, size*0.1),
-        (size*0.9, size*0.2),
-        (size*0.9, size*0.8),
-        (size*0.4, size*0.9),
-    ]  # Координаты должны иметь только положительные значения
+    contour = to_convex_contour(gen_settings.edges_count) # Нужно упростить генерацию
+    boundaries = [(x * size, y * size) for x, y in contour]
     lvl.boundaries = boundaries
 
 

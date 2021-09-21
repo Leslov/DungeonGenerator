@@ -10,6 +10,7 @@ def get_default_settings():
     settings = GenerationSettings()
     settings.chunk_size = player_width * 1.5
     settings.level_scale = 100
+    settings.edges_count = 7
     return settings
 
 
