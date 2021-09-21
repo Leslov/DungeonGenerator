@@ -1,25 +1,6 @@
-class LevelInfo:
-    boundaries: list  # лист поинтов(x, y). Первый равен (0, 0)
+from GenerationSettings import GenerationSettings
+from LevelInfo import LevelInfo
 
-
-class LevelGraphics:
-    _lvl_info: LevelInfo
-
-    def __init__(self, lvl_info):
-        self._lvl_info = lvl_info
-
-    def print_graphics(self):
-        print("TODO")
-
-
-class GenerationSettings:
-    chunk_size: float
-    level_scale: float
-
-
-# defs here
-
-# enddefs
 
 def generate_boundaries(lvl: LevelInfo, gen_settings: GenerationSettings) -> list[tuple]:
     size_mod = gen_settings.level_scale
@@ -29,7 +10,7 @@ def generate_boundaries(lvl: LevelInfo, gen_settings: GenerationSettings) -> lis
         (size, 0),
         (size, size),
         (size, size),
-    ]
+    ]  # Координаты должны иметь только положительные значения
     lvl.boundaries = boundaries
 
 

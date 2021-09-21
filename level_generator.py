@@ -1,5 +1,7 @@
 import generator
-from generator import LevelInfo, LevelGraphics, GenerationSettings
+from GenerationSettings import GenerationSettings
+from LevelGraphics import LevelGraphics
+from LevelInfo import LevelInfo
 
 
 def get_default_settings():
@@ -29,4 +31,3 @@ def generate_level_info(gen_settings, pref_gen_set: GenerationSettings = None):
 level_info = generate_level_info(get_default_settings())
 level = LevelGraphics(level_info)
 level.print_graphics()
-# boundaries = generator.generate_area_boundaries()
