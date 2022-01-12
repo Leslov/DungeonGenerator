@@ -1,2 +1,2 @@
 class LevelInfo:
-    boundaries: list  # лист поинтов(x, y). Первый равен (0, 0)
+    boundaries: list  # лист неотрицательных поинтов(x, y)
